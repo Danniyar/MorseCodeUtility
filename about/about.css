@@ -1,0 +1,60 @@
+* {
+    font-family: 'Tahoma';
+    font-size: 110%;
+    touch-action: manipulation;
+    border-radius: 10px;
+    animation-name: all;
+    animation-duration: 1s;
+}
+body {
+    background-color: black;
+}
+@keyframes all {
+    from {
+      opacity: 0;
+      scale: 0.2; 
+    }
+    to {
+      scale: 1; 
+    }
+  }
+#back{
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    transition: 0.25s;
+    padding: 5px;
+    font-weight: 900;
+} 
+#back:hover {
+    background-color: rgb(121, 121, 121);
+}
+#back:active {
+    background-color: white;
+    border-color: white;
+    color:black;
+}
+#level {
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+    text-align: center;
+}
+#panel {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+.menu {
+    text-align: center;
+    display: unset;
+    position: relative;
+    z-index: 1;
+}
+.description {
+    text-align: center;
+    padding-right: 30px;
+    padding-left: 30px;
+    font-size: 20px;
+    color: white;
+}

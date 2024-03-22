@@ -18,3 +18,7 @@ function inspect()
 {
     window.location.href = './inspect';
 }
+function about()
+{
+    window.location.href = './about';
+}

@@ -209,7 +209,10 @@ function start(){
             return;
         }
         level = parseInt(level) + 1;
-        window.location.href = '/sending/letterpractice/?lvl=' + level;
+        if(level < 32)
+            window.location.href = '/sending/letterpractice/?lvl=' + level;
+        else 
+            window.location.href = '/sending/wordpractice/';
         return;
     }
     if(lives == 0)
