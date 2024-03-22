@@ -2,7 +2,6 @@ const morselibrary = { ".-": 'A', "-...": 'B', "-.-.": 'C', "-..": 'D', ".": 'E'
 const f = obj => Object.fromEntries(Object.entries(obj).map(a => a.reverse()));
 const letterlibrary = f(morselibrary);
 
-const levels = [['E','T'],['A','N'],'check',['I','M'],['S','O'],'check',['D','U'],['R','K'],'check',['C','P'],['B','G'],'check',['W','L'],['Q','H'],'check',['F','Y'],['Z','V'],['X','J'],'check',['1','2'],['3','4'],['5','6'],['7','8'],['9','0'],'check',['?','!'],['.',','],[';',':'],['+','-'],['/','='],'check'];
 var curLtr;
 var ltrs = [];
 var correct = 0;
@@ -11,6 +10,8 @@ var correctTreshold = 0;
 const maxLives = settingsStorage['lives'];
 var lives = maxLives;
 const reviewTime = settingsStorage['reviewTime'];
+const ltrsWrapper = document.getElementById('letterswrapper');
+const sendingLevel = document.getElementsByClassName('sendinglevel');
 
 const heartSvg = '<svg class="heart" width="50px" height="50px" viewBox="0 0 24 24" fill="cyan" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const emptyHeartSvg = '<svg class="heart" width="50px" height="50px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M12 6.00019C10.2006 3.90317 7.19377 3.2551 4.93923 5.17534C2.68468 7.09558 2.36727 10.3061 4.13778 12.5772C5.60984 14.4654 10.0648 18.4479 11.5249 19.7369C11.6882 19.8811 11.7699 19.9532 11.8652 19.9815C11.9483 20.0062 12.0393 20.0062 12.1225 19.9815C12.2178 19.9532 12.2994 19.8811 12.4628 19.7369C13.9229 18.4479 18.3778 14.4654 19.8499 12.5772C21.6204 10.3061 21.3417 7.07538 19.0484 5.17534C16.7551 3.2753 13.7994 3.90317 12 6.00019Z" stroke="white" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"/></svg>';
@@ -105,112 +106,63 @@ function beepstop() {
     gainNode.disconnect(audioCtx.destination);
 };
 
-function findGetParameter(parameterName) {
-    var result = null, tmp = [];
-    location.search.substr(1).split("&").forEach(function (item) {
-        tmp = item.split("=");
-        if (tmp[0] === parameterName)
-            result = decodeURIComponent(tmp[1]);
-    });
-    return result;
-}
-var level = findGetParameter('lvl');
-if(level == undefined)
-    level = 1;
-if(levels[level-1] == 'check')
-{
-    levelElm.innerHTML = 'Level ' + level + ' (Challenge)';
-    for(var i = 0; i < lives; i++)
-        heartsElm.innerHTML += heartSvg;
-}
-else
-    levelElm.innerHTML = 'Level ' + level + ' (' + levels[level-1][0] + ' & ' + levels[level-1][1] + ')';
-for(var i = 0; i < level; i++)
-{
-    if(levels[i] == 'check')
-        continue;
-    ltrs.push(levels[i][0]);
-    ltrs.push(levels[i][1]);
-}
-if(level < 7)
-{
-    if(levels[level-1] == 'check')
-        correctTreshold = 15;
-    else
-        correctTreshold = 10;
-}
-else if(level < 13)
-{
-    if(levels[level-1] == 'check')
-        correctTreshold = 25;
-    else
-        correctTreshold = 20;
-}
-else if(level < 20)
-{
-    if(levels[level-1] == 'check')
-        correctTreshold = 30;
-    else
-        correctTreshold = 26;
-}
-else if(level < 26)
-{
-    if(levels[level-1] == 'check')
-        correctTreshold = 40;
-    else
-        correctTreshold = 36;
-}
-else
-{
-    if(levels[level-1] == 'check')
-        correctTreshold = 50;
-    else
-        correctTreshold = 46;
-}
+for(var i = 0; i < lives; i++)
+    heartsElm.innerHTML += heartSvg;
 
 function back(){
-    if(level < 20)
-        window.location.href = '/sending/letters/';
-    else if(level < 26)
-        window.location.href = '/sending/numbers/';
-    else 
-        window.location.href = '/sending/punctuation/';
+    window.location.href = '/sending/';
 }
 
 function start(){
     if(curLtr == undefined)
     {
+        if(ltrs.length < 2)
+            return;
+        if(ltrs.length < 9)
+            correctTreshold = 15;
+        else if(ltrs.length < 19)
+            correctTreshold = 25;
+        else if(ltrs.length < 27)
+            correctTreshold = 30;
+        else if(ltrs.length < 37)
+            correctTreshold = 40;
+        else
+            correctTreshold = 50;
+        ltrsWrapper.style.display = 'none';
+        for(var i = 0; i < sendingLevel.length; i++)
+            sendingLevel[i].style.display = 'initial';
+        levelElm.innerHTML = 'Sending Custom Letters';
         morseInput.style.pointerEvents = 'all';
         morseInput.style.touchAction = 'manipulation';
         curLtr = ltrs[getRandomInt(ltrs.length)];
         startElm.style.display = 'none';
-        startElm.innerHTML = 'Start';
+        startElm.innerHTML = 'Playing';
         ltrElm.textContent = curLtr;
         inputarea.innerHTML = '&nbsp;';
         inputarea.style.color = 'white';
         ltrElm.style.color = 'white';
         progressbar.style.width = '0%';
-        if(levels[level-1] == 'check')
-        {
-            heartsElm.innerHTML = '';
-            for(var i = 0; i < lives; i++)
-                heartsElm.innerHTML += heartSvg;
-        }
+        heartsElm.innerHTML = '';
+        for(var i = 0; i < lives; i++)
+            heartsElm.innerHTML += heartSvg;
     }
     if(correct == correctTreshold)
     {
-        if(startElm.innerHTML != 'Next Level')
+        if(startElm.innerHTML != 'Start')
         {
             morseInput.style.pointerEvents = 'none';
             morseInput.style.touchAction = 'none';
             ltrElm.textContent = '';
             startElm.style.display = '';
-            startElm.innerHTML = 'Next Level';
+            startElm.innerHTML = 'Start';
+            lives = maxLives;
+            correct = 0;
+            curLtr = undefined;
+            ltrsWrapper.style.display = '';
+            for(var i = 0; i < sendingLevel.length; i++)
+                sendingLevel[i].style.display = 'none';
             return;
         }
-        level = parseInt(level) + 1;
-        window.location.href = '/sending/letterpractice/?lvl=' + level;
-        return;
     }
     if(lives == 0)
     {
@@ -224,6 +176,9 @@ function start(){
             lives = maxLives;
             correct = 0;
             curLtr = undefined;
+            ltrsWrapper.style.display = '';
+            for(var i = 0; i < sendingLevel.length; i++)
+                sendingLevel[i].style.display = 'none';
             return;
         }
     }
@@ -251,15 +206,12 @@ function check(){
         inputarea.textContent = letterlibrary[curLtr];
         inputarea.style.color = 'red';
         ltrElm.style.color = 'red';
-        if(levels[level-1] == 'check')
-        {
-            lives -= 1;
-            heartsElm.innerHTML = '';
-            for(var i = 0; i < lives; i++)
-                heartsElm.innerHTML += heartSvg;
-            for(var i = 0; i < (maxLives-lives); i++)
-                heartsElm.innerHTML += emptyHeartSvg;
-        }
+        lives -= 1;
+        heartsElm.innerHTML = '';
+        for(var i = 0; i < lives; i++)
+            heartsElm.innerHTML += heartSvg;
+        for(var i = 0; i < (maxLives-lives); i++)
+            heartsElm.innerHTML += emptyHeartSvg;
         ltrElm.style.animation = 'none';
         ltrElm.offsetHeight;
         ltrElm.style.animation = null;
@@ -283,6 +235,24 @@ function unfreeze(){
     while(curLtr == pastLtr)
         curLtr = ltrs[getRandomInt(ltrs.length)];
     ltrElm.textContent = curLtr;
+}
+
+function letterclicked(ltr)
+{
+    let elm = document.getElementById(ltr);
+    if(ltrs.includes(ltr))
+    {
+        elm.innerHTML = elm.id;
+        elm.style.opacity = '';
+        ltrs.splice(ltrs.indexOf(ltr), 1);
+    }
+    else
+    {
+        elm.innerHTML = ("<div class='lettertext'>" + letterlibrary[elm.id] + "</div>") + elm.id;
+        elm.style.opacity = '1';
+        ltrs.push(ltr);
+    }
+    return;
 }
 
 if ('addEventListener' in document) {

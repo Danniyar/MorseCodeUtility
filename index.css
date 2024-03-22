@@ -28,7 +28,7 @@ h2 {
     margin-left: 20px;
     margin-top: 0;
 }
-#translator, #receiving, #sending, #settings, #about {
+#translator, #receiving, #sending, #settings, #about, #inspect {
     padding-left: 10px;
     padding-right: 10px;
     background-color: black;
@@ -37,6 +37,9 @@ h2 {
     font-size: 250%;
     font-weight: 900;
     color: white;
+}
+#inspect {
+  font-size: 150%;
 }
 #settings, #about {
   padding: 0;
@@ -50,10 +53,10 @@ h2 {
   align-items: center;
   display: flex;
 }
-#translator:hover, #receiving:hover, #sending:hover, #settings:hover, #about:hover {
+#translator:hover, #receiving:hover, #sending:hover, #settings:hover, #about:hover, #inspect:hover {
     background-color: rgb(121, 121, 121);
 }
-#translator:active, #receiving:active, #sending:active, #settings:active, #about:active {
+#translator:active, #receiving:active, #sending:active, #settings:active, #about:active, #inspect:active {
     background-color: rgb(255, 255, 255);
     border-color: white;
     color:rgb(0, 0, 0);

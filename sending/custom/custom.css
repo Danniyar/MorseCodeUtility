@@ -18,6 +18,9 @@ body {
       scale: 1; 
     }
   }
+.sendinglevel {
+    display: none;
+}
 #back, #start {
     color: white;
     background-color: black;
@@ -34,35 +37,18 @@ body {
     border-color: white;
     color:black;
 }
-#level {
-    font-weight: 900;
-    font-size: 30px;
-    color: white;
-}
-#panel {
+.inputwrapper {
+    align-items: center;
     justify-content: center;
     display: flex;
-    position: sticky;
-    top: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-}
-#morseindicator {
-    margin: 10px;
-    pointer-events: none;
-    touch-action: none;
-    width: 100px;
-    height: 50px;
-    background-color: rgb(55, 55, 55);
-    border: 1px solid white;
-    transition: 0s;
-}
-#morseindicator:hover{
-    background-color: rgb(131, 131, 131);
-    border-color: black;
-}
-#morseindicator:active{
-    background-color: rgb(255, 255, 255);
-    border-color: black;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
 }
 #letterswrapper {
     display: inline-block; 
@@ -80,22 +66,8 @@ body {
     margin: 0px 0px 0px 0px;
     overflow: hidden;
 }
-.progress-bar {
-    width: 0%;
-    height: 12px;
-    background-color: cyan;
-    transition: 0.25s;
-    margin: 0px 0px 0px 0px;
-    border-radius: 0px;
-}
 .letters {
     text-align: center;
-}
-.menu {
-    text-align: center;
-    display: unset;
-    position: relative;
-    z-index: 1;
 }
 .letter {
     text-align: center;
@@ -107,8 +79,6 @@ body {
     transition: 0.25s;
     font-size: 20px;
     font-weight: 900;
-    touch-action: none;
-    pointer-events: none;
     opacity: 0.25;
     margin-bottom: 5px;
     padding-right: 0px;
@@ -119,11 +89,87 @@ body {
     background-color: rgb(121, 121, 121);
 }
 .letter:active {
-    background-color: white;
-    color:black;
+    background-color: rgb(0, 0, 0);
+    border-color: white;
+    color:white;
 }
-.letter:active .lettertext {
-    border-color: black;
+#input {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 45px;
+    border: 1px solid white;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: 0.25s;
+    overflow: scroll;
+}
+#ltr {
+    font-weight: 900;
+    font-size: 90px;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: 0.25s;
+}
+#level {
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
+#panel {
+    justify-content: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#textinput {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(55, 55, 55);
+    border: 1px solid white;
+}
+#textinput:hover{
+    background-color: rgb(131, 131, 131);
+    border-color: white;
+}
+#textinput:active{
+    background-color: rgb(255, 255, 255);
+    border-color: white;
+}
+#morseInput {
+    pointer-events: none;
+    touch-action: none;
+}
+.letters {
+    text-align: center;
+}
+.menu {
+    text-align: center;
+    display: unset;
+    position: relative;
+    z-index: 1;
+}
+#progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: cyan;
+    transition: 0.25s;
+}
+#progress-wrapper {
+    margin: 15px 35px 15px 35px;
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+br {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 #settings {
     padding: 10px;

@@ -106,6 +106,10 @@ function restrict()
         }
         textarea.textContent = text;
     }
+    textarea.scrollTop = textarea.scrollHeight;
+    textarea.scrollLeft = textarea.scrollWidth;
+    inputarea.scrollTop = inputarea.scrollHeight;
+    inputarea.scrollLeft = inputarea.scrollWidth;
 }
 
 function morseinputdown()
@@ -182,16 +186,40 @@ function onSwitch() {
 async function onPlay() {
     if(morsePlay.value == 'stop')
     {
-        document.body.style.pointerEvents = 'all';
-        document.body.style.touchAction = 'all';
+        morseSwitch.style.pointerEvents = 'all';
+        morseSwitch.style.touchAction = 'manipulation';
+        morseSwitch.style.opacity = '';
+        clear.style.pointerEvents = 'all';
+        clear.style.touchAction = 'manipulation';
+        clear.style.opacity = '';
+        dotlength.style.pointerEvents = 'all';
+        dotlength.style.touchAction = 'manipulation';
+        dotlength.style.opacity = '';
+        inputarea.style.pointerEvents = 'all';
+        inputarea.style.touchAction = 'manipulation';
+        textarea.style.pointerEvents = 'all';
+        textarea.style.touchAction = 'manipulation';
+        morseInput.style.pointerEvents = 'all';
+        morseInput.style.touchAction = 'manipulation';
         morsePlay.value = 'play';
         morsePlay.style.color = '';
         return;
     }
-    document.body.style.pointerEvents = 'none';
-    document.body.style.touchAction = 'none';
-    morsePlay.style.pointerEvents = 'all';
-    morsePlay.style.touchAction = 'all';
+    morseSwitch.style.pointerEvents = 'none';
+    morseSwitch.style.touchAction = 'none';
+    morseSwitch.style.opacity = '0.5';
+    clear.style.pointerEvents = 'none';
+    clear.style.touchAction = 'none';
+    clear.style.opacity = '0.5';
+    dotlength.style.pointerEvents = 'none';
+    dotlength.style.touchAction = 'none';
+    dotlength.style.opacity = '0.5';
+    inputarea.style.pointerEvents = 'none';
+    inputarea.style.touchAction = 'none';
+    textarea.style.pointerEvents = 'none';
+    textarea.style.touchAction = 'none';
+    morseInput.style.pointerEvents = 'none';
+    morseInput.style.touchAction = 'none';
     morsePlay.value = 'stop';
     morsePlay.style.color = 'cyan';
     let text = '';
@@ -220,8 +248,21 @@ async function onPlay() {
         else
             await new Promise(r => setTimeout(r, dotDuration*3));
     }
-    document.body.style.pointerEvents = 'all';
-    document.body.style.touchAction = 'all';
+    morseSwitch.style.pointerEvents = 'all';
+    morseSwitch.style.touchAction = 'manipulation';
+    morseSwitch.style.opacity = '';
+    clear.style.pointerEvents = 'all';
+    clear.style.touchAction = 'manipulation';
+    clear.style.opacity = '';
+    dotlength.style.pointerEvents = 'all';
+    dotlength.style.touchAction = 'manipulation';
+    dotlength.style.opacity = '';
+    inputarea.style.pointerEvents = 'all';
+    inputarea.style.touchAction = 'manipulation';
+    textarea.style.pointerEvents = 'all';
+    textarea.style.touchAction = 'manipulation';
+    morseInput.style.pointerEvents = 'all';
+    morseInput.style.touchAction = 'manipulation';
     morsePlay.value = 'play';
     morsePlay.style.color = '';
 };

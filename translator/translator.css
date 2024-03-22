@@ -17,6 +17,7 @@
     }
   }
 body {
+    transition: 0.25s;
     background-color: black;
     color: white;
   }

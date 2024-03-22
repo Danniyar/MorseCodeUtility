@@ -167,6 +167,10 @@ function check(){
         wordElm.textContent = 'Correct';
         inputarea.style.color = 'cyan';
         wordElm.style.color = 'cyan';
+        wordElm.style.animation = 'none';
+        wordElm.offsetHeight;
+        wordElm.style.animation = null;
+        wordElm.style.animation = 'vertical-shaking 0.7s';
         setTimeout(unfreeze, 1000);
     }
     else
@@ -181,6 +185,10 @@ function check(){
             heartsElm.innerHTML += heartSvg;
         for(var i = 0; i < (maxLives-lives); i++)
             heartsElm.innerHTML += emptyHeartSvg;
+        wordElm.style.animation = 'none';
+        wordElm.offsetHeight;
+        wordElm.style.animation = null;
+        wordElm.style.animation = 'horizontal-shaking 0.7s';
         setTimeout(unfreeze, reviewTime);
     }
 }

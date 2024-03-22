@@ -8,7 +8,6 @@
 }
 body {
     background-color: black;
-    color: white;
 }
 @keyframes all {
     from {
@@ -24,7 +23,6 @@ body {
     background-color: black;
     border: 1px solid white;
     transition: 0.25s;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 5px;
     font-weight: 900;
 } 
@@ -36,6 +34,11 @@ body {
     border-color: white;
     color:black;
 }
+#level {
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
 #panel {
     justify-content: center;
     display: flex;
@@ -43,37 +46,15 @@ body {
     top: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
-#level {
-    font-weight: 900;
-    font-size: 30px;
-}
-#word {
-    margin-top: 10px;
-    font-weight: 900;
-    font-size: 45px;
-    color: cyan;
-    border: 1px solid white;
-    margin-left: 50px;
-    margin-right: 50px;
-    transition: 0.25s;
-}
-#stats {
-    font-weight: 900;
-    font-size: 20px;
-    float: right;
-    color: cyan;
-}
-#stats svg {
-    vertical-align: bottom;
-}
 #morseindicator {
+    margin: 10px;
     pointer-events: none;
     touch-action: none;
-    margin: 10px;
     width: 100px;
     height: 50px;
     background-color: rgb(55, 55, 55);
     border: 1px solid white;
+    transition: 0s;
 }
 #morseindicator:hover{
     background-color: rgb(131, 131, 131);
@@ -86,22 +67,26 @@ body {
 #letterswrapper {
     display: inline-block; 
     width: 100%;           
-    position: relative;    
+    position: relative;
     transition: 0.25s;
     z-index: 0;
 }
 .lettertext {
-    border: 1px solid white;
     margin-bottom: 5px;
-    margin-top: 2px;
     color: cyan;
-    width: 100%;
+    width: 97%;
+    border: 1px solid white;
+    border-radius: 9px 9px 0px 0px;
+    margin: 0px 0px 0px 0px;
+    overflow: hidden;
 }
 .progress-bar {
     width: 0%;
     height: 12px;
     background-color: cyan;
     transition: 0.25s;
+    margin: 0px 0px 0px 0px;
+    border-radius: 0px;
 }
 .letters {
     text-align: center;
@@ -114,16 +99,14 @@ body {
 }
 .letter {
     text-align: center;
+    min-height: 40px;
     width: 60px;
-    height: 40px;
     color: white;
     background-color: black;
     border: 1px solid white;
     transition: 0.25s;
     font-size: 20px;
     font-weight: 900;
-    touch-action: none;
-    pointer-events: none;
     opacity: 0.25;
     margin-bottom: 5px;
     padding-right: 0px;
@@ -143,6 +126,7 @@ body {
 #settings {
     padding: 10px;
     border: 1px solid white;
+    color: white;
 }
 input {
     background-color: black;

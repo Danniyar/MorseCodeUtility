@@ -134,9 +134,11 @@ body {
     background-color: rgb(121, 121, 121);
 }
 .letter:active {
-    background-color: rgb(0, 0, 0);
-    border-color: white;
-    color:white;
+    background-color: white;
+    color:black;
+}
+.letter:active .lettertext {
+    border-color: black;
 }
 #settings {
     padding: 10px;

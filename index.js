@@ -14,3 +14,7 @@ function settings()
 {
     window.location.href = './settings';
 }
+function inspect()
+{
+    window.location.href = './inspect';
+}
