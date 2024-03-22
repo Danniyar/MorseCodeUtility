@@ -1,0 +1,149 @@
+* {
+    font-family: 'Tahoma';
+    font-size: 110%;
+    touch-action: manipulation;
+    border-radius: 10px;
+    animation-name: all;
+    animation-duration: 1s;
+}
+body {
+    background-color: black;
+}
+@keyframes all {
+    from {
+      opacity: 0;
+      scale: 0.2; 
+    }
+    to {
+      scale: 1; 
+    }
+  }
+#back, #start {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    transition: 0.25s;
+    padding: 5px;
+    font-weight: 900;
+} 
+#back:hover, #start:hover {
+    background-color: rgb(121, 121, 121);
+}
+#back:active, #start:active {
+    background-color: white;
+    border-color: white;
+    color:black;
+}
+.inputwrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+#input {
+    margin-top: 10px;
+    font-weight: 900;
+    font-size: 45px;
+    border: 1px solid white;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: 0.25s;
+    overflow: scroll;
+}
+#ltr {
+    font-weight: 900;
+    font-size: 90px;
+    color: white;
+    margin-left: 50px;
+    margin-right: 50px;
+    transition: 0.25s;
+}
+#level {
+    font-weight: 900;
+    font-size: 30px;
+    color: white;
+}
+#panel {
+    justify-content: center;
+    display: flex;
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#textinput {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(55, 55, 55);
+    border: 1px solid white;
+}
+#textinput:hover{
+    background-color: rgb(131, 131, 131);
+    border-color: white;
+}
+#textinput:active{
+    background-color: rgb(255, 255, 255);
+    border-color: white;
+}
+#morseInput {
+    pointer-events: none;
+    touch-action: none;
+}
+.letters {
+    text-align: center;
+}
+.menu {
+    text-align: center;
+    display: unset;
+    position: relative;
+    z-index: 1;
+}
+#progress-bar {
+    width: 0%;
+    height: 30px;
+    background-color: cyan;
+    transition: 0.25s;
+}
+#progress-wrapper {
+    margin: 15px 35px 15px 35px;
+    border: 1px solid white;
+    border-radius: 10px;
+    overflow: hidden;
+}
+br {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#settings {
+    padding: 10px;
+    border: 1px solid white;
+    color: white;
+}
+input {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+@keyframes horizontal-shaking {
+    0% { transform: translateX(0) }
+    25% { transform: translateX(7px) }
+    50% { transform: translateX(-7px) }
+    75% { transform: translateX(7px) }
+    100% { transform: translateX(0); }
+   }
+@keyframes vertical-shaking {
+    0% { transform: translateY(0) }
+    50% { transform: translateY(-10px) }
+    100% { transform: translateY(0); }
+   }

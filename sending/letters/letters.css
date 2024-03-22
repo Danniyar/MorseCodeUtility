@@ -1,0 +1,83 @@
+* {
+    font-family: 'Tahoma';
+    font-size: 110%;
+    touch-action: manipulation;
+    border-radius: 10px;
+    animation-name: all;
+    animation-duration: 1s;
+}
+body {
+    background-color: black;
+    color: white;
+}
+@keyframes all {
+    from {
+      opacity: 0;
+      scale: 0.2; 
+    }
+    to {
+      scale: 1; 
+    }
+  }
+.levels {
+    display: table-cell;
+    padding-left: 50px;
+}
+#level {
+    text-align: center;
+    font-weight: 900;
+    font-size: 30px;
+}
+#line1 {
+    padding-left: 0px;
+}
+.levelstable {
+    text-align: center;
+    display: table;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+h2 {
+    font-weight: 900;
+    font-size: 300%;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 0;
+}
+#panel {
+    position: sticky;
+    top: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+#back {
+    color: rgb(255, 255, 255);
+    background-color: rgb(0, 0, 0);
+    border: 1px solid white;
+    transition: 0.25s;
+} 
+#back:hover {
+    background-color: rgb(121, 121, 121);
+}
+#back:active {
+    background-color: rgb(255, 255, 255);
+    border-color: white;
+    color:rgb(0, 0, 0);
+}
+.levelbtn {
+    background-color: rgb(0, 0, 0);
+    width: 200px;
+    color: white;
+    border: 1px solid white;
+    transition: 0.25s;
+    font-size: 30px;
+    font-weight: 900;
+}
+.levelbtn:hover {
+    background-color: rgb(121, 121, 121);
+}
+.levelbtn:active {
+    background-color: white;
+    border-color: white;
+    color:black;
+}

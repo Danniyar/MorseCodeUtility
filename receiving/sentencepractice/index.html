@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./sentencepractice.css" type="text/css" rel="stylesheet">
+    <title>Practicing Sentences</title>
+</head>
+<body>
+    <button id="back" onclick="back()"><svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.9908 7.82251C16.2897 7.5357 16.7644 7.54547 17.0512 7.84433L20.541 11.4807C20.8195 11.7709 20.8195 12.2291 20.541 12.5193L17.0512 16.1557C16.7644 16.4545 16.2897 16.4643 15.9908 16.1775C15.692 15.8907 15.6822 15.4159 15.969 15.1171L18.2404 12.7502L11.2727 12.7502C10.8585 12.7502 10.5227 12.4144 10.5227 12.0002C10.5227 11.586 10.8585 11.2502 11.2727 11.2502L18.2408 11.2502L15.969 8.88295C15.6822 8.58409 15.692 8.10932 15.9908 7.82251Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 4C3.25 3.58579 3.58579 3.25 4 3.25H13.4545C13.8688 3.25 14.2045 3.58579 14.2045 4V7C14.2045 7.41421 13.8688 7.75 13.4545 7.75C13.0403 7.75 12.7045 7.41421 12.7045 7V4.75H4.75V19.25H12.7045V17C12.7045 16.5858 13.0403 16.25 13.4545 16.25C13.8688 16.25 14.2045 16.5858 14.2045 17V20C14.2045 20.4142 13.8688 20.75 13.4545 20.75H4C3.58579 20.75 3.25 20.4142 3.25 20V4Z" fill="currentColor"/></svg></button>
+    <div id="stats"><svg fill="currentColor" width="20px" height="20px" style="border-radius: 0;" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg"><path d="M0 26.016v-20q0-2.496 1.76-4.256t4.256-1.76h20q2.464 0 4.224 1.76t1.76 4.256v20q0 2.496-1.76 4.224t-4.224 1.76h-20q-2.496 0-4.256-1.76t-1.76-4.224zM4 26.016q0 0.832 0.576 1.408t1.44 0.576h20q0.8 0 1.408-0.576t0.576-1.408v-20q0-0.832-0.576-1.408t-1.408-0.608h-20q-0.832 0-1.44 0.608t-0.576 1.408v20zM7.584 16q0-0.832 0.608-1.408t1.408-0.576 1.408 0.576l2.848 2.816 7.072-7.040q0.576-0.608 1.408-0.608t1.408 0.608 0.608 1.408-0.608 1.408l-8.48 8.48q-0.576 0.608-1.408 0.608t-1.408-0.608l-4.256-4.256q-0.608-0.576-0.608-1.408z"></path></svg> 0 <br> <svg width="20px" height="20px" viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M5.00001 4C3.34315 4 2.00001 5.34314 2.00001 7L2 17C2 18.6569 3.34315 20 5 20H8C8.55228 20 9 19.5523 9 19C9 18.4477 8.55228 18 8 18H5C4.44771 18 4 17.5523 4 17V7C4 6.44772 4.44771 6 5 6L19 6C19.5523 6 20 6.44772 20 7L20 17C20 17.5523 19.5523 18 19 18H14.0027L15.2821 16.7161C15.6734 16.3235 15.6734 15.687 15.2821 15.2944C14.8909 14.9019 14.2566 14.9019 13.8654 15.2944L11.5937 17.574L11.5805 17.5873C10.804 18.3724 10.8057 19.6406 11.5859 20.4234L13.8604 22.7058C14.2513 23.0981 14.8852 23.0981 15.2762 22.7058C15.6672 22.3134 15.6672 21.6773 15.2762 21.285L13.9956 20H19C20.6569 20 22 18.6569 22 17L22 7C22 5.34315 20.6569 4 19 4L5.00001 4Z" fill="currentColor"/></svg> 0</div>
+    <div class="menu">
+        <div id="level">Sentences Quiz</div><br>
+        <div id="panel">
+            <button id="start" onclick="start()">Start</button>
+            <button id="morseindicator"></button>
+            <div id="hearts"></div>
+        </div>
+        <div id="word"></div>
+    </div><br>
+    <div id="letterswrapper">
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('1')" id="1">1</button>
+        <button class='letter' onclick="letterclicked('2')" id="2">2</button>
+        <button class='letter' onclick="letterclicked('3')" id="3">3</button>
+        <button class='letter' onclick="letterclicked('4')" id="4">4</button>
+        <button class='letter' onclick="letterclicked('5')" id="5">5</button>
+        <button class='letter' onclick="letterclicked('6')" id="6">6</button>
+        <button class='letter' onclick="letterclicked('7')" id="7">7</button>
+        <button class='letter' onclick="letterclicked('8')" id="8">8</button>
+        <button class='letter' onclick="letterclicked('9')" id="9">9</button>
+        <button class='letter' onclick="letterclicked('0')" id="0">0</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('Q')" id="Q">Q</button>
+        <button class='letter' onclick="letterclicked('W')" id="W">W</button>
+        <button class='letter' onclick="letterclicked('E')" id="E">E</button>
+        <button class='letter' onclick="letterclicked('R')" id="R">R</button>
+        <button class='letter' onclick="letterclicked('T')" id="T">T</button>
+        <button class='letter' onclick="letterclicked('Y')" id="Y">Y</button>
+        <button class='letter' onclick="letterclicked('U')" id="U">U</button>
+        <button class='letter' onclick="letterclicked('I')" id="I">I</button>
+        <button class='letter' onclick="letterclicked('O')" id="O">O</button>
+        <button class='letter' onclick="letterclicked('P')" id="P">P</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('A')" id="A">A</button>
+        <button class='letter' onclick="letterclicked('S')" id="S">S</button>
+        <button class='letter' onclick="letterclicked('D')" id="D">D</button>
+        <button class='letter' onclick="letterclicked('F')" id="F">F</button>
+        <button class='letter' onclick="letterclicked('G')" id="G">G</button>
+        <button class='letter' onclick="letterclicked('H')" id="H">H</button>
+        <button class='letter' onclick="letterclicked('J')" id="J">J</button>
+        <button class='letter' onclick="letterclicked('K')" id="K">K</button>
+        <button class='letter' onclick="letterclicked('L')" id="L">L</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('Z')" id="Z">Z</button>
+        <button class='letter' onclick="letterclicked('X')" id="X">X</button>
+        <button class='letter' onclick="letterclicked('C')" id="C">C</button>
+        <button class='letter' onclick="letterclicked('V')" id="V">V</button>
+        <button class='letter' onclick="letterclicked('B')" id="B">B</button>
+        <button class='letter' onclick="letterclicked('N')" id="N">N</button>
+        <button class='letter' onclick="letterclicked('M')" id="M">M</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('?')" id="?">?</button>
+        <button class='letter' onclick="letterclicked('!')" id="!">!</button>
+        <button class='letter' onclick="letterclicked('.')" id=".">.</button>
+        <button class='letter' onclick="letterclicked(',')" id=",">,</button>
+        <button class='letter' onclick="letterclicked(';')" id=";">;</button>
+        <button class='letter' onclick="letterclicked(':')" id=":">:</button>
+        <button class='letter' onclick="letterclicked('+')" id="+">+</button>
+        <button class='letter' onclick="letterclicked('-')" id="-">-</button>
+        <button class='letter' onclick="letterclicked('/')" id="/">/</button>
+        <button class='letter' onclick="letterclicked('=')" id="=">=</button>
+    </div><br>
+    </div><br>
+    <div id="settings">
+        Dash = 3 dots <br>
+        Space between letters = 3 dots <br>
+        Space between words = 7 dots <br>
+    </div>
+</body>
+</html>
+<script src="/settingsCheck.js"></script>
+<script src="./sentencepractice.js"></script>
+<script type='application/javascript' src='/fastclick.js'></script>

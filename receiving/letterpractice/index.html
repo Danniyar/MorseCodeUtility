@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./letterpractice.css" type="text/css" rel="stylesheet">
+    <title>Practicing Letters</title>
+</head>
+<body>
+    <button id="back" onclick="back()"><svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15.9908 7.82251C16.2897 7.5357 16.7644 7.54547 17.0512 7.84433L20.541 11.4807C20.8195 11.7709 20.8195 12.2291 20.541 12.5193L17.0512 16.1557C16.7644 16.4545 16.2897 16.4643 15.9908 16.1775C15.692 15.8907 15.6822 15.4159 15.969 15.1171L18.2404 12.7502L11.2727 12.7502C10.8585 12.7502 10.5227 12.4144 10.5227 12.0002C10.5227 11.586 10.8585 11.2502 11.2727 11.2502L18.2408 11.2502L15.969 8.88295C15.6822 8.58409 15.692 8.10932 15.9908 7.82251Z" fill="currentColor"/><path fill-rule="evenodd" clip-rule="evenodd" d="M3.25 4C3.25 3.58579 3.58579 3.25 4 3.25H13.4545C13.8688 3.25 14.2045 3.58579 14.2045 4V7C14.2045 7.41421 13.8688 7.75 13.4545 7.75C13.0403 7.75 12.7045 7.41421 12.7045 7V4.75H4.75V19.25H12.7045V17C12.7045 16.5858 13.0403 16.25 13.4545 16.25C13.8688 16.25 14.2045 16.5858 14.2045 17V20C14.2045 20.4142 13.8688 20.75 13.4545 20.75H4C3.58579 20.75 3.25 20.4142 3.25 20V4Z" fill="currentColor"/></svg></button>
+    <div class="menu">
+        <div id="level">Level ? (A & B)</div><br>
+        <div id="panel">
+            <button id="start" onclick="start()">Start</button>
+            <button id="morseindicator"></button>
+            <div id="hearts"></div>
+        </div>
+    </div><br>
+    <div id="letterswrapper">
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('1')" id="1">1</button>
+        <button class='letter' onclick="letterclicked('2')" id="2">2</button>
+        <button class='letter' onclick="letterclicked('3')" id="3">3</button>
+        <button class='letter' onclick="letterclicked('4')" id="4">4</button>
+        <button class='letter' onclick="letterclicked('5')" id="5">5</button>
+        <button class='letter' onclick="letterclicked('6')" id="6">6</button>
+        <button class='letter' onclick="letterclicked('7')" id="7">7</button>
+        <button class='letter' onclick="letterclicked('8')" id="8">8</button>
+        <button class='letter' onclick="letterclicked('9')" id="9">9</button>
+        <button class='letter' onclick="letterclicked('0')" id="0">0</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('Q')" id="Q">Q</button>
+        <button class='letter' onclick="letterclicked('W')" id="W">W</button>
+        <button class='letter' onclick="letterclicked('E')" id="E">E</button>
+        <button class='letter' onclick="letterclicked('R')" id="R">R</button>
+        <button class='letter' onclick="letterclicked('T')" id="T">T</button>
+        <button class='letter' onclick="letterclicked('Y')" id="Y">Y</button>
+        <button class='letter' onclick="letterclicked('U')" id="U">U</button>
+        <button class='letter' onclick="letterclicked('I')" id="I">I</button>
+        <button class='letter' onclick="letterclicked('O')" id="O">O</button>
+        <button class='letter' onclick="letterclicked('P')" id="P">P</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('A')" id="A">A</button>
+        <button class='letter' onclick="letterclicked('S')" id="S">S</button>
+        <button class='letter' onclick="letterclicked('D')" id="D">D</button>
+        <button class='letter' onclick="letterclicked('F')" id="F">F</button>
+        <button class='letter' onclick="letterclicked('G')" id="G">G</button>
+        <button class='letter' onclick="letterclicked('H')" id="H">H</button>
+        <button class='letter' onclick="letterclicked('J')" id="J">J</button>
+        <button class='letter' onclick="letterclicked('K')" id="K">K</button>
+        <button class='letter' onclick="letterclicked('L')" id="L">L</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('Z')" id="Z">Z</button>
+        <button class='letter' onclick="letterclicked('X')" id="X">X</button>
+        <button class='letter' onclick="letterclicked('C')" id="C">C</button>
+        <button class='letter' onclick="letterclicked('V')" id="V">V</button>
+        <button class='letter' onclick="letterclicked('B')" id="B">B</button>
+        <button class='letter' onclick="letterclicked('N')" id="N">N</button>
+        <button class='letter' onclick="letterclicked('M')" id="M">M</button>
+    </div><br>
+    <div class="letters">
+        <button class='letter' onclick="letterclicked('?')" id="?">?</button>
+        <button class='letter' onclick="letterclicked('!')" id="!">!</button>
+        <button class='letter' onclick="letterclicked('.')" id=".">.</button>
+        <button class='letter' onclick="letterclicked(',')" id=",">,</button>
+        <button class='letter' onclick="letterclicked(';')" id=";">;</button>
+        <button class='letter' onclick="letterclicked(':')" id=":">:</button>
+        <button class='letter' onclick="letterclicked('+')" id="+">+</button>
+        <button class='letter' onclick="letterclicked('-')" id="-">-</button>
+        <button class='letter' onclick="letterclicked('/')" id="/">/</button>
+        <button class='letter' onclick="letterclicked('=')" id="=">=</button>
+    </div><br>
+    </div><br>
+</body>
+</html>
+<script src="/settingsCheck.js"></script>
+<script src="./letterpractice.js"></script>
+<script type='application/javascript' src='/fastclick.js'></script>

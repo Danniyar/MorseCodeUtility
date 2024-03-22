@@ -1,0 +1,114 @@
+* {
+    font-family: 'Tahoma';
+    font-size: 110%;
+    touch-action: manipulation;
+    border-radius: 10px;
+    animation-name: all;
+    animation-duration: 1s;
+}
+@keyframes all {
+    from {
+      opacity: 0;
+      scale: 0.2; 
+    }
+    to {
+      opacity: 1;
+      scale: 1; 
+    }
+  }
+body {
+    background-color: black;
+    color: white;
+  }
+.inputwrapper {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    position: relative;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+    text-align: center;
+}
+br {
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
+}
+#switch, #morsePlay, #copyto, #copyfrom, #clear, #back {
+    color: white;
+    background-color: black;
+    border: 1px solid white;
+    transition: 0.25s;
+} 
+#switch:hover, #morsePlay:hover, #copyto:hover, #copyfrom:hover, #clear:hover, #back:hover {
+    background-color: rgb(121, 121, 121);
+}
+#switch:active, #morsePlay:active, #copyto:active, #copyfrom:active, #clear:active, #back:active {
+    background-color: rgb(255, 255, 255);
+    border-color: white;
+    color:black;
+}
+#textinput {
+    width: 100px;
+    height: 100px;
+    background-color: rgb(55, 55, 55);
+    border: 1px solid white;
+}
+#textinput:hover{
+    background-color: rgb(131, 131, 131);
+    border-color: white;
+}
+#textinput:active{
+    background-color: rgb(255, 255, 255);
+    border-color: white;
+}
+#spaceinput {
+    width: 75px;
+    height: 75px;
+}
+#fromtext {
+    flex: 1;
+    border-style: solid;
+    width: 75%;
+    height: 200px;
+    text-align: left;
+    border: 1px solid white;
+    background-color: black;
+    color: white;
+}
+#totext {
+    flex: 1;
+    border-style: solid;
+    width: 75%;
+    height: 200px;
+    text-align: left;
+    white-space:pre-wrap;
+    -webkit-user-select: text;
+    -khtml-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    -o-user-select: text;
+    user-select: text;
+    border: 1px solid white;
+    overflow-y: scroll;
+}
+#settings {
+    padding: 10px;
+    border: 1px solid white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+input {
+    background-color: black;
+    color: white;
+    border: 1px solid white;
+}
+.sidebuttons {
+    margin-left: 10px;
+}
