@@ -105,16 +105,7 @@ function beepstop() {
     gainNode.disconnect(audioCtx.destination);
 };
 
-function findGetParameter(parameterName) {
-    var result = null, tmp = [];
-    location.search.substr(1).split("&").forEach(function (item) {
-        tmp = item.split("=");
-        if (tmp[0] === parameterName)
-            result = decodeURIComponent(tmp[1]);
-    });
-    return result;
-}
-var level = findGetParameter('lvl');
+var level = parseInt(window.location.hash.substring(1));
 if(level == undefined)
     level = 1;
 if(levels[level-1] == 'check')
@@ -210,8 +201,8 @@ function start(){
         }
         level = parseInt(level) + 1;
         if(level < 32)
-            window.location.href = '../letterpractice/?lvl=' + level;
-        else 
+            window.location.href = '../letterpractice/#' + level;
+        else
             window.location.href = '../wordpractice/';
         return;
     }
