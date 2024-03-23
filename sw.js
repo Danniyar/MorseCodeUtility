@@ -1,4 +1,4 @@
-const cacheName = 'v3';
+const cacheName = 'v5';
 const RUNTIME = 'runtime'+cacheName;
 var contentToCache = [
       "./",
