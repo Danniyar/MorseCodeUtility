@@ -201,7 +201,10 @@ function start(){
         }
         level = parseInt(level) + 1;
         if(level < 32)
+        {
             window.location.href = '../letterpractice/#' + level;
+            location.reload();
+        }
         else
             window.location.href = '../wordpractice/';
         return;

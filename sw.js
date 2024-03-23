@@ -1,4 +1,4 @@
-const cacheName = 'v6';
+const cacheName = 'v7';
 const RUNTIME = 'runtime'+cacheName;
 var contentToCache = [
       "./",
