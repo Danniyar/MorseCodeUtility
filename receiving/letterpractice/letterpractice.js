@@ -218,7 +218,10 @@ function start(){
         }
         level = parseInt(level) + 1;
         if(level < 32)
+        {
             window.location.href = '../letterpractice/#' + level;
+            location.reload();
+        }
         else 
             window.location.href = '../wordpractice/';
         return;
@@ -284,13 +287,11 @@ function letterclicked(ltr)
             }
         }
         let pastLtr = curLtr;
-        while(pastLtr == curLtr)
+        curLtr = ltrElm[getRandomInt(ltrElm.length)];
+        while(pastLtr == curLtr && ltrElm.length > 1)
             curLtr = ltrElm[getRandomInt(ltrElm.length)];
         if(levels[level-1] == 'check' && learnedElm.length > 0 && getRandomInt(10) <= 1)
-        {
-            while(pastLtr == curLtr)
-                curLtr = learnedElm[getRandomInt(learnedElm.length)];
-        }
+            curLtr = learnedElm[getRandomInt(learnedElm.length)];
         wasincorrect = false;
         answerStartTime = new Date();
         start();
