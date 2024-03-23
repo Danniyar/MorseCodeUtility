@@ -18,7 +18,7 @@ body {
       scale: 1; 
     }
   }
-#back, #start {
+#back {
     color: white;
     background-color: black;
     border: 1px solid white;
@@ -26,10 +26,10 @@ body {
     padding: 5px;
     font-weight: 900;
 } 
-#back:hover, #start:hover {
+#back:hover {
     background-color: rgb(121, 121, 121);
 }
-#back:active, #start:active {
+#back:active {
     background-color: white;
     border-color: white;
     color:black;
@@ -80,14 +80,6 @@ body {
     margin: 0px 0px 0px 0px;
     overflow: hidden;
 }
-.progress-bar {
-    width: 0%;
-    height: 12px;
-    background-color: cyan;
-    transition: 0.25s;
-    margin: 0px 0px 0px 0px;
-    border-radius: 0px;
-}
 .letters {
     text-align: center;
 }
@@ -122,25 +114,3 @@ body {
 .letter:active .lettertext {
     border-color: black;
 }
-#settings {
-    padding: 10px;
-    border: 1px solid white;
-    color: white;
-}
-input {
-    background-color: black;
-    color: white;
-    border: 1px solid white;
-}
-@keyframes horizontal-shaking {
-    0% { transform: translateX(0) }
-    25% { transform: translateX(7px) }
-    50% { transform: translateX(-7px) }
-    75% { transform: translateX(7px) }
-    100% { transform: translateX(0); }
-   }
-@keyframes vertical-shaking {
-    0% { transform: translateY(0) }
-    50% { transform: translateY(-10px) }
-    100% { transform: translateY(0); }
-   }
