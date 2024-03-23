@@ -1,8 +1,8 @@
 function practice(page)
 {
-    window.location.href = '/receiving/' + page;
+    window.location.href = './' + page;
 }
 
 function back(){
-    window.location.href = '/';
+    window.location.href = '../';
 }

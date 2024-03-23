@@ -281,7 +281,7 @@ function onClear(){
 }
 
 function back(){
-    window.location.href = '/';
+    window.location.href = '../';
 }
 
 if ('addEventListener' in document) {

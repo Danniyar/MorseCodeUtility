@@ -58,5 +58,5 @@ function reset(){
 }
 
 function back(){
-    window.location.href = '/';
+    window.location.href = '../';
 }

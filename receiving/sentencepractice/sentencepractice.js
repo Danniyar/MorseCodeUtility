@@ -107,7 +107,7 @@ async function onPlay() {
 };
 
 function back(){
-    window.location.href = '/receiving/';
+    window.location.href = '../';
 }
 
 function start(){

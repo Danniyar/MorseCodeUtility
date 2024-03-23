@@ -110,7 +110,7 @@ for(var i = 0; i < lives; i++)
     heartsElm.innerHTML += heartSvg;
 
 function back(){
-    window.location.href = '/sending/';
+    window.location.href = '../';
 }
 
 function start(){

@@ -158,7 +158,7 @@ for(var i = 0; i < ltrElm.length; i++)
 }
 
 function back(){
-    window.location.href = '/receiving/';
+    window.location.href = '../';
 }
 
 function start(){

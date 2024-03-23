@@ -113,7 +113,7 @@ function beepstop() {
 };
 
 function back(){
-    window.location.href = '/sending/';
+    window.location.href = '../';
 }
 
 function start(){
@@ -152,7 +152,6 @@ function start(){
             curWord = undefined;
             return;
         }
-        window.location.href = '/sending/wordpractice/';
         return;
     }
 }

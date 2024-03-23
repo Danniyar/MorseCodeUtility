@@ -116,7 +116,7 @@ function beepstop() {
 };
 
 function back(){
-    window.location.href = '/sending/';
+    window.location.href = '../';
 }
 
 function start(){

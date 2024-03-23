@@ -170,11 +170,11 @@ else
 
 function back(){
     if(level < 20)
-        window.location.href = '/sending/letters/';
+        window.location.href = '../letters/';
     else if(level < 26)
-        window.location.href = '/sending/numbers/';
+        window.location.href = '../numbers/';
     else 
-        window.location.href = '/sending/punctuation/';
+        window.location.href = '../punctuation/';
 }
 
 function start(){
@@ -210,9 +210,9 @@ function start(){
         }
         level = parseInt(level) + 1;
         if(level < 32)
-            window.location.href = '/sending/letterpractice/?lvl=' + level;
+            window.location.href = '../letterpractice/?lvl=' + level;
         else 
-            window.location.href = '/sending/wordpractice/';
+            window.location.href = '../wordpractice/';
         return;
     }
     if(lives == 0)

@@ -1,8 +1,8 @@
 function practice(level)
 {
-    window.location.href = '/receiving/letterpractice/?lvl=' + level;
+    window.location.href = '../letterpractice/?lvl=' + level;
 }
 
 function back(){
-    window.location.href = '/receiving/';
+    window.location.href = '../';
 }

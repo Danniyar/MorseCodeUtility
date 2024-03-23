@@ -63,7 +63,7 @@ async function onPlay() {
 };
 
 function back(){
-    window.location.href = '/';
+    window.location.href = '../';
 }
 
 function letterclicked(ltr)
